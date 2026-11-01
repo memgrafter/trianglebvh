@@ -1,0 +1,19 @@
+[package]
+name = "trianglebvh"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "Closest-point queries on triangle meshes, float32 results equal to cubvh's unsigned_distance"
+publish = false
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+path = "src/lib.rs"
+
+[dependencies]
+
+[profile.release]
+opt-level = 3
+codegen-units = 1
+lto = true
+panic = "abort"
